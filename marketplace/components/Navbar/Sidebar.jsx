@@ -68,21 +68,17 @@ const Sidebar = ({ setOpenSideMenu }) => {
   ]
 
   const openDiscoverMenu = () => {
-    if (!openDiscover) {
+    if (!openDiscover)
       setOpenDiscover(true);
-    }
-    else {
+    else
       setOpenDiscover(false);
-    }
   }
 
   const openHelpMenu = () => {
-    if (!openHelp) {
+    if (!openHelp)
       setOpenHelp(true);
-    }
-    else {
+    else
       setOpenHelp(false);
-    }
   }
 
   const closeSidebar = () => {
@@ -91,34 +87,38 @@ const Sidebar = ({ setOpenSideMenu }) => {
 
   return (
     <div>
-      <GrClose className='sideBar_closeBtn'
+      <GrClose className='absolute top-12 right-8 transition-all duration-200 ease-in-out cursor-pointer shadow-md shadow-blue-400 hover:rotate-45'
         onClick={() => closeSidebar()} />
-      <div className='sidebar_box'>
-        <img className='' src={images.logo} alt="logo"
+      <div className='p-4 border border-blue-300 bg-slate-800'>
+        {/* <img className='' src={images.logo} alt="logo"
           width={150} height={150}
-        />
+        /> */}
+        <p className='-mt-8'>
+          <a href='/'>
+          </a>
+        </p>
         <p>Discover the most amazing articles.</p>
-        <div className='sidebar_social'>
-          <a href='#'>
+        <div className='flex items-center text-2xl gap-5'>
+          <a className='p-1 rounded-[50%] transition-all duration-[0.3s] ease-in grid hover:bg-blue-300 hover:text-gray-800 hover:shadow-sm' href='#'>
             <TiSocialLinkedin />
           </a>
-          <a href='#'>
+          <a className='p-1 rounded-[50%] transition-all duration-[0.3s] ease-in grid hover:bg-blue-300 hover:text-gray-800 hover:shadow-sm' href='#'>
             <TiSocialTwitter />
           </a>
-          <a href='#'>
+          <a className='p-1 rounded-[50%] transition-all duration-[0.3s] ease-in grid hover:bg-blue-300 hover:text-gray-800 hover:shadow-sm' href='#'>
             <TiSocialInstagram />
           </a>
-          <a href='#'>
+          <a className='p-1 rounded-[50%] transition-all duration-[0.3s] ease-in grid hover:bg-blue-300 hover:text-gray-800 hover:shadow-sm' href='#'>
             <TiSocialFacebook />
           </a>
-          <a href='#'>
+          <a className='p-1 rounded-[50%] transition-all duration-[0.3s] ease-in grid hover:bg-blue-300 hover:text-gray-800 hover:shadow-sm' href='#'>
             <TiSocialYoutube />
           </a>
         </div>
       </div>
-      <div className='sideBar_menu'>
+      <div className='-8 uppercase font-medium border-b-2 border-blue-300'>
         <div>
-          <div className='sidbar_menu_box'
+          <div className='flex justify-between items-center cursor-pointer'
             onClick={() => openDiscoverMenu()}
           >
             <p>Discover</p>
@@ -126,7 +126,7 @@ const Sidebar = ({ setOpenSideMenu }) => {
           </div>
           {
             openDiscover && (
-              <div className='sidebar_discover' >
+              <div className='px-4' >
                 {discover.map((el, i) => (
                   <p key={i + 1}>
                     <Link href={{ pathname: `${el.link}` }} >
@@ -138,13 +138,13 @@ const Sidebar = ({ setOpenSideMenu }) => {
             )
           }
         </div>
-        <div className='sidebar_menu_box'
+        <div className='flex justify-between items-center cursor-pointer'
           onClick={() => openHelpMenu()}
         ><p>Help Center</p>
           <TiArrowSortedDown />
         </div>
         {openHelp && (
-          <div className='sidebar_discover'>
+          <div className='px-4'>
             {helpCenter.map((el, i) => (
               <p key={i + 1}>
                 <Link href={{ pathname: `${el.link}` }} >
@@ -155,7 +155,7 @@ const Sidebar = ({ setOpenSideMenu }) => {
           </div>
         )}
       </div>
-      <div className='sidebar_Btn'>
+      <div className=' flex justify-between items-center p-8'>
         <Button btnName="Create" />
         <Button btnName="Connect Wallet" />
       </div>

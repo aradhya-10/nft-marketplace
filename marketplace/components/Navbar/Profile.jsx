@@ -1,48 +1,48 @@
 import React from 'react';
 import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
 import { MdHelpCenter } from "react-icons/md";
-import { TbDownloadOff, TbDownload } from "react-icons/tb";
+import { TbDownload } from "react-icons/tb";
 import images from '../../img'
 
 import Link from "next/link"
 
 const Profile = () => {
   return (
-    <div className='prof'>
-      <div className='prof_acc' >
-        <img src={images.user1} alt="user profile" width={50} height={50} className='' />
-        <div className='prof_acc_info'>
-          <p>vampireAb</p>
+    <div className='rounded-2xl text-base px-2 py-8 absolute w-[320px] -left-[13.5rem] md:-left-[17rem] top-[4.5rem] z-[2222222]'>
+      <div className='flex items-start p-6 gap-8' >
+        <img src={images.user1} alt="user profile" width={50} height={50} className='rounded-[50%]' />
+        <div className='leading-[0.3]'>
+          <p className='font-semibold'>vampireAb</p>
           <small>Addresss..0xde0f</small>
         </div>
       </div>
-      <div className='prof_menu'> 
-        <div className='prof_mnu_one'>
-          <div className='prof_menu_one_item'>
+      <div className=''> 
+        <div className=''>
+          <div className='flex items-center px-6 gap-8 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
             <FaUserAlt />
             <p>
               <Link href={{pathname:'/myprofile'}}>My Profile</Link>
             </p>
           </div>
-          <div className='prof_menu_one_item'>
+          <div className='flex items-center px-6 gap-8 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
             <FaRegImage />
             <p>
               <Link href={{pathname:'/my-items'}}>My Items</Link>
             </p>
           </div>
-          <div className='prof_menu_one_item'>
+          <div className='flex items-center px-6 gap-8 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
             <FaUserEdit />
             <p>
               <Link href={{pathname:'/edit-profile'}}>Edit Profile</Link>
             </p>
           </div>
         </div>
-        <div className='prf_menu_two'>
-          <div className='prof_menu_one_item'>
+        <div className=''>
+          <div className='flex items-center px-6 gap-8 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
             <MdHelpCenter />
             <Link href = {{pathname:'/help'}}>Help</Link>
           </div>
-          <div className='prof_menu_one_item'>
+          <div className='flex items-center px-6 gap-8 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
             <TbDownload />
             <Link href = {{pathname:'/disconnect'}}>Disconnect</Link>
           </div>

@@ -30,8 +30,8 @@ const Navbar = () => {
   }
 
   const openMenu = (e) => {
-    const btnTxt = e.target.innerText;    
-    if (btnTxt == "Discover") {      
+    const btnTxt = e.target.innerText;
+    if (btnTxt == "Discover") {
       setDiscover(true);
       setHelp(false);
       setNotification(false);
@@ -75,21 +75,19 @@ const Navbar = () => {
 
   return (
     <div className='w-full p-6 relative z-[111111]'>
-      <div className='mx-auto grid grid-cols-2 items-center justify-betwee gap-4'>
+      <div className='mx-auto flex items-center justify-between gap-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
           <img
             src={images.logo}
             alt="NFT MARKETPLACE"
             width={100}
             height={100}
-            className="text-7xl text-blue-300"
+            className="text-sm text-blue-300"
           />
         </div>
-        <div className='hidden border border-blue-300 w-3/5 md:flex items-center p-2 rounded-[2rem]'>
-          <div className='border border-blue-300 w-3/5 flex items-center p-2 rounded-[2rem]'>
-            <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-10/12'/>
-            <BsSearch onClick={() => {}} className="cursor-pointer text-[1.4rem]" />
-          </div>
+        <div className='border border-blue-300 w-fit flex items-center py-2 px-4 rounded-[2rem]'>
+          <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-10/12' />
+          <BsSearch onClick={() => { }} className="cursor-pointer text-[1.4rem]" />
         </div>
         {/*End of Left Section*/}
         <div className="grid gap-4 items-center grid-cols-3 md:grid-cols-5">
@@ -133,7 +131,7 @@ const Navbar = () => {
                 src={images.user1}
                 onClick={() => openProfile()}
                 className="rounded-full" />
-              {profile && <Profile className="relative cursor-pointer"/>}
+              {profile && <Profile className="relative cursor-pointer" />}
             </div>
           </div>
           {/* Menu Button */}
