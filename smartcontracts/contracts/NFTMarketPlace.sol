@@ -9,7 +9,7 @@ import "hardhat/console.sol";
 
 error Unauthorized();
 error NilTransfer();
-error UnacceptableTransfer();
+error InvalidAmount(uint256 sent, uint256 required);
 
 contract NFTMarketPlace is ERC721URIStorage {
     using Counters for Counters.Counter;
@@ -58,9 +58,13 @@ contract NFTMarketPlace is ERC721URIStorage {
         return listingPrice;
     }
 
+    // Create a market Item
     function createMarketItem(uint256 tokenId, uint256 price) private {
         if (price <= 0) revert NilTransfer();
-        if (msg.value != listingPrice) revert UnacceptableTransfer();
+        if (msg.value != listingPrice) revert InvalidAmount({
+          sent: msg.value,
+          required: listingPrice
+        });
 
         _transfer(msg.sender, address(this), tokenId);
 
@@ -99,7 +103,10 @@ contract NFTMarketPlace is ERC721URIStorage {
             revert Unauthorized();
         }
         if (msg.value != listingPrice) {
-            revert UnacceptableTransfer();
+            revert InvalidAmount({
+          sent: msg.value,
+          required: listingPrice
+        });
         }
         idMarketItem[tokenId].sold = false;
         idMarketItem[tokenId].price = price;
@@ -115,7 +122,10 @@ contract NFTMarketPlace is ERC721URIStorage {
 
     function createMarketSale(uint256 tokenId) public payable {
         uint256 price = idMarketItem[tokenId].price;
-        if (msg.value != price) revert UnacceptableTransfer();
+        if (msg.value != price) revert InvalidAmount({
+          sent: msg.value,
+          required: price
+        });
 
         // idMarketItem[tokenId].seller = idMarketItem[tokenId].owner;
         idMarketItem[tokenId].owner = payable(msg.sender);
