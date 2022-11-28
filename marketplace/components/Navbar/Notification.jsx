@@ -3,7 +3,7 @@ import images from "../../img"
 
 const Notification = () => {
   return (
-    <div className='notification'>
+    <div className='absolute py-8 px-4 shadow-lg shadow-blue-300 -left-80 top-14 z-[2222222] bg-slate-700 rounded-2xl w-96'>
       <p>Notification</p>
       <div className='notification_box'>
         <div className='noti_box_img'>

@@ -74,70 +74,71 @@ const Navbar = () => {
   }
 
   return (
-    <div className='navbar'>
-      <div className='navbar_container'>
-        <div className='navbar_contaniner_left'>
+    <div className='w-full p-6 relative z-[111111]'>
+      <div className='mx-auto grid grid-cols-2 items-center justify-betwee gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
           <img
             src={images.logo}
-            alt="NT MARKETPLACE"
+            alt="NFT MARKETPLACE"
             width={100}
             height={100}
+            className="text-7xl text-blue-300"
           />
         </div>
-        <div className='navbar_container_left_box_input'>
-          <div className='navbar_container_left_box_input_box'>
-            <input type="text" placeholder="Search NFT" />
-            <BsSearch onClick={() => {}} className="search_con" />
+        <div className='hidden border border-blue-300 w-3/5 md:flex items-center p-2 rounded-[2rem]'>
+          <div className='border border-blue-300 w-3/5 flex items-center p-2 rounded-[2rem]'>
+            <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-10/12'/>
+            <BsSearch onClick={() => {}} className="cursor-pointer text-[1.4rem]" />
           </div>
         </div>
         {/*End of Left Section*/}
-        <div className="navbar_container_right">
+        <div className="grid gap-4 items-center grid-cols-3 md:grid-cols-5">
           {/* Discover Section */}
-          <div className="navbar_container_right_discover">
+          <div className="hidden md:block relative cursor-pointer">
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover &&
-              (<div className='navbar_container_right_discover_box'>
+              (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
                 <Discover />
               </div>
               )}
           </div>
           {/* Help Center */}
-          <div className='navbar_container_right_help'>
+          <div className='hidden md:block relative cursor-pointer'>
             <p onClick={(e) => openMenu(e)}>Help Center</p>
             {help &&
-              (<div className='navbar_container_right_help_box'>
+              (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
                 <HelpCenter />
               </div>
               )}
           </div>
           {/*Notification*/}
-          <div className='navbar_container_right_notify'>
-            <MdNotifications className="notify" onClick={() => openNotification()} />
+          <div className='relative cursor-pointer'>
+            <MdNotifications className="text-3xl" onClick={() => openNotification()} />
             {notification &&
               <Notification />
             }
           </div>
 
           {/*Create Button */}
-          <div className='navbar_container_right_button'>
+          <div className='relative cursor-pointer'>
             <Button btnText="create" />
           </div>
 
           {/* User Profile */}
-          <div className='navbar_container_right_profile_box'>
-            <div className='navbar_container_right_profile'>
+          <div className='relative cursor-pointer'>
+            <div className='relative cursor-pointer'>
               <img width="40"
                 height="40"
                 alt="Profile"
                 src={images.user1}
                 onClick={() => openProfile()}
-                className="navbar_container_right_profile" />
-              {profile && <Profile />}
+                className="rounded-full" />
+              {profile && <Profile className="relative cursor-pointer"/>}
             </div>
           </div>
           {/* Menu Button */}
-          <div className='navbar_container_right_menuBtn'>
-            <CgMenuRight className="menuIcon" onClick={() => openSidebar()} />
+          <div className='hidden '>
+            <CgMenuRight className="text-4xl cursor-pointer" onClick={() => openSidebar()} />
 
           </div>
         </div>
@@ -145,7 +146,7 @@ const Navbar = () => {
       {/* OPEN SIDEBAR */}
       {
         openSideMenu && (
-          <div className='sidebar'>
+          <div className='block md:hidden h-screen overflow-y-auto fixed top-0 w-[384px] shadow-blue-300 z-[11111] scrollbar-hide'>
             <Sidebar setOpenSideMenu={setOpenSideMenu} />
           </div>
         )
