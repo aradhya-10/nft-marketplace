@@ -30,14 +30,14 @@ const Navbar = () => {
 
   const openMenu = (e) => {
     const btnTxt = e.target.innerText;
-    if (btnTxt == "Discover") {
+    if (btnTxt == "Discover" && !discover) {
       setDiscover(true);
       setHelp(false);
       setNotification(false);
       setProfile(false);
       console.log(discover);
     }
-    else if (btnTxt == "Help Center") {
+    else if (btnTxt == "Help" && !help) {
       setDiscover(false);
       setHelp(true);
       setNotification(false);
@@ -89,7 +89,7 @@ const Navbar = () => {
           <BsSearch onClick={() => { }} className="cursor-pointer text-[1.4rem]" />
         </div>
         {/*End of Left Section*/}
-        <div className="grid gap-4 items-center grid-cols-3 md:grid-cols-5">
+        <div className="gap-4 md:gap-10 justify-center items-center flex">
           {/* Discover Section */}
           <div className="hidden md:block relative cursor-pointer">
             <p onClick={(e) => openMenu(e)}>Discover</p>
@@ -101,7 +101,7 @@ const Navbar = () => {
           </div>
           {/* Help Center */}
           <div className='hidden md:block relative cursor-pointer'>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
+            <p onClick={(e) => openMenu(e)}>Help</p>
             {help &&
               (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
                 <HelpCenter />
@@ -117,8 +117,8 @@ const Navbar = () => {
           </div>
 
           {/*Create Button */}
-          <div className='relative cursor-pointer'>
-            <Button btnText="create" />
+          <div className='relative cursor-pointer hidden md:flex'>
+            <Button btnName="Create" />
           </div>
 
           {/* User Profile */}
@@ -127,27 +127,28 @@ const Navbar = () => {
               <img width="40"
                 height="40"
                 alt="Profile"
-                src="/img/logo.svg"
+                src="/img/user-1.png"
                 onClick={() => openProfile()}
                 className="rounded-full" />
               {profile && <Profile className="relative cursor-pointer" />}
             </div>
           </div>
           {/* Menu Button */}
-          <div className='hidden '>
+          <div className='md:hidden'>
             <CgMenuRight className="text-4xl cursor-pointer" onClick={() => openSidebar()} />
 
           </div>
         </div>
+
+        {/* OPEN SIDEBAR */}
+        {
+          openSideMenu && (
+            <div className='inline-flex md:hidden overflow-y-auto fixed top-0 shadow-blue-300 z-[11111] scrollbar-hide'>
+              <Sidebar setOpenSideMenu={setOpenSideMenu} />
+            </div>
+          )
+        }
       </div>
-      {/* OPEN SIDEBAR */}
-      {
-        openSideMenu && (
-          <div className='block md:hidden h-screen overflow-y-auto fixed top-0 w-[384px] shadow-blue-300 z-[11111] scrollbar-hide'>
-            <Sidebar setOpenSideMenu={setOpenSideMenu} />
-          </div>
-        )
-      }
     </div>
   )
 }
