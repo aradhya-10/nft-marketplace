@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import images from "../../img"
 import Link from 'next/link';
 import { GrClose } from 'react-icons/gr'
 import {
@@ -86,14 +85,14 @@ const Sidebar = ({ setOpenSideMenu }) => {
   }
 
   return (
-    <div>
+    <div className='flex flex-col'>
       <GrClose className='absolute top-12 right-8 transition-all duration-200 ease-in-out cursor-pointer shadow-md shadow-blue-400 hover:rotate-45'
         onClick={() => closeSidebar()} />
       <div className='p-4 border border-blue-300 bg-slate-800'>
         {/* <img className='' src={images.logo} alt="logo"
           width={150} height={150}
         /> */}
-        <p className='-mt-8'>
+        <p className=''>
           <a href='/'>
           </a>
         </p>
@@ -116,7 +115,7 @@ const Sidebar = ({ setOpenSideMenu }) => {
           </a>
         </div>
       </div>
-      <div className='-8 uppercase font-medium border-b-2 border-blue-300'>
+      <div className='p-8 uppercase font-medium border-b-2 border-blue-300'>
         <div>
           <div className='flex justify-between items-center cursor-pointer'
             onClick={() => openDiscoverMenu()}

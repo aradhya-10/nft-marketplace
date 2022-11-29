@@ -2,7 +2,6 @@ import React from 'react';
 import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownload } from "react-icons/tb";
-import images from '../../img'
 
 import Link from "next/link"
 
@@ -10,10 +9,10 @@ const Profile = () => {
   return (
     <div className='rounded-2xl text-base px-2 py-8 absolute w-[320px] -left-[13.5rem] md:-left-[17rem] top-[4.5rem] z-[2222222]'>
       <div className='flex items-start p-6 gap-8' >
-        <img src={images.user1} alt="user profile" width={50} height={50} className='rounded-[50%]' />
-        <div className='leading-[0.3]'>
+        <img src="/img/user-1.png" alt="user profile" width={50} height={50} className='rounded-[50%]' />
+        <div>
           <p className='font-semibold'>vampireAb</p>
-          <small>Addresss..0xde0f</small>
+          <small>0xde0f</small>
         </div>
       </div>
       <div className=''> 

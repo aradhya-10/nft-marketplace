@@ -8,7 +8,7 @@ import { MdNotifications } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
 import { CgMenuLeft, CgMenuRight } from 'react-icons/cg';
 import { Button } from '../componentsIndex'
-import images from "../../img"
+import Link from 'next/link';
 
 const Navbar = () => {
   const [notification, setNotification] = useState(false);
@@ -31,14 +31,14 @@ const Navbar = () => {
 
   const openMenu = (e) => {
     const btnTxt = e.target.innerText;
-    if (btnTxt == "Discover") {
+    if (btnTxt == "Discover" && !discover) {
       setDiscover(true);
       setHelp(false);
       setNotification(false);
       setProfile(false);
       console.log(discover);
     }
-    else if (btnTxt == "Help Center") {
+    else if (btnTxt == "Help" && !help) {
       setDiscover(false);
       setHelp(true);
       setNotification(false);
@@ -75,22 +75,24 @@ const Navbar = () => {
 
   return (
     <div className='w-full p-6 relative z-[111111]'>
-      <div className='mx-auto flex items-center justify-between gap-4'>
-        <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
-          <img
-            src={images.logo}
-            alt="NFT MARKETPLACE"
-            width={100}
-            height={100}
-            className="text-sm text-blue-300"
-          />
-        </div>
-        <div className='border border-blue-300 w-fit flex items-center py-2 px-4 rounded-[2rem]'>
-          <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-10/12' />
-          <BsSearch onClick={() => { }} className="cursor-pointer text-[1.4rem]" />
+      <div className='mx-auto w-full flex items-center justify-evenly md:gap-4'>
+
+          <Link href="/">
+            <img
+              src="/img/logo.svg"
+              alt="NFT MARKETPLACE"
+              width={100}
+              height={100}
+              className="text-sm text-blue-300"
+            />
+          </Link>
+        
+        <div className='border border-blue-300 w-fit hidden md:flex items-center py-2 px-4 rounded-[2rem]'>
+          <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-fit' />
+          <BsSearch onClick={() => {}} className="cursor-pointer text-[1.4rem]" />
         </div>
         {/*End of Left Section*/}
-        <div className="grid gap-4 items-center grid-cols-3 md:grid-cols-5">
+        <div className="gap-4 md:gap-10 justify-center items-center flex">
           {/* Discover Section */}
           <div className="hidden md:block relative cursor-pointer">
             <p onClick={(e) => openMenu(e)}>Discover</p>
@@ -102,7 +104,7 @@ const Navbar = () => {
           </div>
           {/* Help Center */}
           <div className='hidden md:block relative cursor-pointer'>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
+            <p onClick={(e) => openMenu(e)}>Help</p>
             {help &&
               (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
                 <HelpCenter />
@@ -118,8 +120,8 @@ const Navbar = () => {
           </div>
 
           {/*Create Button */}
-          <div className='relative cursor-pointer'>
-            <Button btnText="create" />
+          <div className='relative cursor-pointer hidden md:flex'>
+            <Button btnName="Create" />
           </div>
 
           {/* User Profile */}
@@ -128,27 +130,28 @@ const Navbar = () => {
               <img width="40"
                 height="40"
                 alt="Profile"
-                src={images.user1}
+                src="/img/user-1.png"
                 onClick={() => openProfile()}
                 className="rounded-full" />
               {profile && <Profile className="relative cursor-pointer" />}
             </div>
           </div>
           {/* Menu Button */}
-          <div className='hidden '>
+          <div className='md:hidden'>
             <CgMenuRight className="text-4xl cursor-pointer" onClick={() => openSidebar()} />
 
           </div>
         </div>
+
+        {/* OPEN SIDEBAR */}
+        {
+          openSideMenu && (
+            <div className='inline-flex md:hidden overflow-y-auto fixed top-0 shadow-blue-300 z-[11111] scrollbar-hide'>
+              <Sidebar setOpenSideMenu={setOpenSideMenu} />
+            </div>
+          )
+        }
       </div>
-      {/* OPEN SIDEBAR */}
-      {
-        openSideMenu && (
-          <div className='block md:hidden h-screen overflow-y-auto fixed top-0 w-[384px] shadow-blue-300 z-[11111] scrollbar-hide'>
-            <Sidebar setOpenSideMenu={setOpenSideMenu} />
-          </div>
-        )
-      }
     </div>
   )
 }
