@@ -19,15 +19,15 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
   // }, [search]);
 
   return (
-    <div className='w-full'>
-      <div className='w-2/5 mt-2 mb-4 mx-auto bg-blue-300 text-white flex rounded-lg items-center shadow-md shadow-gray-300'>
-        <BsSearch className='text-2xl py-2 px-3 cursor-pointer text-blue-300' />
+    <div className='w-4/5 mx-auto'>
+      <div className='w-2/5 mt-2 mb-4 px-8 mx-auto text-black bg-blue-300 flex rounded-lg items-center shadow-md shadow-gray-300'>
+        <BsSearch className='mx-12 z-[2222] cursor-pointer' />
         <input
           type="text"
           placeholder="Enter keywords"
           onChange={(e) => setSearchItem(e.target.value)}
           value={searchItem}
-          className = "w-4/5 border-0 outline-none p-4 bg-slate-800 placeholder-shown:text-blue-300 text-lg"
+          className="w-4/5 border-0 outline-none p-4 bg-transparent text-white  text-lg"
         />
         <BsArrowRight className='' />
       </div>

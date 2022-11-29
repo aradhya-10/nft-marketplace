@@ -2,10 +2,10 @@ import React from 'react'
 
 const Notification = () => {
   return (
-    <div className='absolute py-8 px-4 shadow-lg shadow-blue-300 md:-left-80 top-14 z-[2222222] bg-slate-700 rounded-2xl md:w-96 w-80 -left-44'>
+    <div className='absolute py-8 px-4 shadow-lg shadow-blue-300 md:-left-80 top-16 z-[2222222] bg-gray-300 rounded-2xl md:w-96 w-80 -left-44'>
       <p className='text-xl font-semibold mb-8'>Notification</p>
-      <div className='flex items-start p-2 md:p-4 gap-4 transition-all duration-[0.3s] ease-in hover:bg-blue-300 hover:text-gray-800 hover:rounded-md'>
-        <div className='rounded-[5rem]'>
+      <div className='flex items-start p-2 md:p-4 gap-4 transition-[background] duration-[0.3s] ease-in hover:bg-blue-400 hover:text-white rounded-md'>
+        <div className=''>
           <img src="/img/user-1.png" alt="User1"
             width={50} height={50}
             className=" rounded-[5rem]"

@@ -52,16 +52,24 @@ const searchPage = () => {
   //   images.nft_image_2,
   // ];
   return (
-    <div className=''>
-      <Banner bannerImage="/img/creatorbackground-2.jpeg" />
-      <SearchBar
-        // onHandleSearch={onHandleSearch}
-        // onClearSearch={onClearSearch}
-      />
-      <Filter />
-      {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-      <Slider />
-      <Brand />
+    <div>
+      <div className="flex flex-col bg-banner items-center p-5">
+        {/* <Banner className="absolute" bannerImage="/img/creatorbackground-2.jpeg" /> */}
+        <SearchBar
+          // onHandleSearch={onHandleSearch}
+          // onClearSearch={onClearSearch}
+          className=""
+        />
+        <Filter />
+        </div>
+        {
+          // nfts.length == 0 ?
+          // <Loader /> :
+          <NFTCard NFTData={nfts} />
+        }
+        <Slider />
+        <Brand />
+      
     </div>
   );
 };
