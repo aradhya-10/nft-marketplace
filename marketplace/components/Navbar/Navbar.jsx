@@ -94,7 +94,7 @@ const Navbar = () => {
           <div className="hidden md:block relative cursor-pointer">
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover &&
-              (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
+              (<div className='absolute py-4 px-2 shadow-blue-400 md:top-14 md:-left-10 text-base w-[15rem] rounded-2xl bg-gray-300'>
                 <Discover />
               </div>
               )}
@@ -103,7 +103,7 @@ const Navbar = () => {
           <div className='hidden md:block relative cursor-pointer'>
             <p onClick={(e) => openMenu(e)}>Help</p>
             {help &&
-              (<div className='absolute py-4 px-2 shadow-blue-400 text-base w-[15rem] rounded-2xl bg-slate-600'>
+              (<div className='absolute py-4 px-2 shadow-blue-400 md:top-14 md:-left-10 text-base w-[15rem] rounded-2xl bg-gray-300'>
                 <HelpCenter />
               </div>
               )}

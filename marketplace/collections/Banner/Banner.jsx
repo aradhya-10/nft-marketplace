@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Banner = ({ bannerImage }) => {
   return (
-    <div className=''>
+    <div className='absolute z-0'>
       <div className=''>
         <img
           src={bannerImage}
