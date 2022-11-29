@@ -81,7 +81,7 @@ const Navbar = () => {
             alt="NFT MARKETPLACE"
             width={100}
             height={100}
-            className="text-sm text-blue-300"
+            className="text-blue-300"
           />
         </div>
         <div className='border border-blue-300 w-fit flex items-center py-2 px-4 rounded-[2rem]'>
