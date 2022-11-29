@@ -2,7 +2,7 @@ import React from 'react';
 import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownloadOff, TbDownload } from "react-icons/tb";
-import images from '../../img'
+// import images from '../../public/img'
 
 import Link from "next/link"
 
@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <div className='prof'>
       <div className='prof_acc' >
-        <img src={images.user1} alt="user profile" width={50} height={50} className='' />
+        <img src="/img/user-1.png" alt="user profile" width={50} height={50} className='' />
         <div className='prof_acc_info'>
           <p>vampireAb</p>
           <small>Addresss..0xde0f</small>

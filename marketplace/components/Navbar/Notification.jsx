@@ -1,5 +1,5 @@
 import React from 'react'
-import images from "../../img"
+// import img from "../../public"
 
 const Notification = () => {
   return (
@@ -7,7 +7,7 @@ const Notification = () => {
       <p>Notification</p>
       <div className='notification_box'>
         <div className='noti_box_img'>
-          <img src={images.user1} alt="User1"
+          <img src="/img/user-1.png" alt="User1"
             width={50} height={50}
             className="noti_box_img"
           />

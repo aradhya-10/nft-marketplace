@@ -8,7 +8,6 @@ import { MdNotifications } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
 import { CgMenuLeft, CgMenuRight } from 'react-icons/cg';
 import { Button } from '../componentsIndex'
-import images from "../../img"
 
 const Navbar = () => {
   const [notification, setNotification] = useState(false);
@@ -78,7 +77,7 @@ const Navbar = () => {
       <div className='mx-auto grid grid-cols-2 items-center justify-betwee gap-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
           <img
-            src={images.logo}
+            src="/img/logo.svg"
             alt="NFT MARKETPLACE"
             width={100}
             height={100}
@@ -130,7 +129,7 @@ const Navbar = () => {
               <img width="40"
                 height="40"
                 alt="Profile"
-                src={images.user1}
+                src="/img/logo.svg"
                 onClick={() => openProfile()}
                 className="rounded-full" />
               {profile && <Profile className="relative cursor-pointer"/>}

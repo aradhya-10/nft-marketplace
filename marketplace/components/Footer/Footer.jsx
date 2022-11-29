@@ -6,23 +6,26 @@ import {
   TiSocialLinkedin,
   TiSocialTwitter,
   TiSocialYoutube,
-  TiSocialInstagram
+  TiSocialInstagram,
+  TiArrowSortedDown,
+  TiArrowSortedUp,
 } from "react-icons/ti";
 import { RiSendPlaneFill } from "react-icons/ri";
 
 //INTERNAL IMPORT
-// import Style from "./Footer.module.css";
-import images from "../../img";
+// import "globals.css";
+import images from "../../public/img";
 import { Discover, HelpCenter } from "../NavBar/index";
-//INCOMPLETE
+
 const Footer = () => {
   return (
-    <div className="container w-full p-6">
-      <div className="container w-4/5 grid grid-cols-2 m-auto">
-        <div className="container">
-          {/* <Image src={images.logo} alt="footer logo" height={100} width={100} /> */}
+    <div className="w-full p-6">
+      <div className="lg:w-4/5 w-11/12 my-0 mx-auto flex items-start justify-between gap-12">
+        <div className="container"> 
+		{/* Style.footer_box_{social} */}
+          <Image src="/img/logo.svg" alt="footer logo" height={100} width={100} />
           <a href="/">
-            <DiJqueryLogo className="container" />
+            <DiJqueryLogo className="text-7xl" />
           </a>
           <p>
             The world’s first and largest digital marketplace for crypto
@@ -30,20 +33,20 @@ const Footer = () => {
             exclusive digital items.
           </p>
 
-          <div className="container">
-            <a href="/">
+          <div className="flex gap-5 text-2xl items-center">
+            <a href="#" >
               <TiSocialFacebook />
             </a>
-            <a href="/">
+            <a href="#">
               <TiSocialLinkedin />
             </a>
-            <a href="/">
+            <a href="#">
               <TiSocialTwitter />
             </a>
-            <a href="/">
+            <a href="#">
               <TiSocialYoutube />
             </a>
-            <a href="/">
+            <a href="#">
               <TiSocialInstagram />
             </a>
           </div>
@@ -59,20 +62,20 @@ const Footer = () => {
           <HelpCenter />
         </div>
 
-        <div className="container">
+     	<div className="container">
           <h3>Subscribe</h3>
 
-          <div className="container">
-            <input type="email" placeholder="Enter your email *" />
-            <RiSendPlaneFill className="container" />
+          <div className="flex items-center justify-between mt-12 py-6 px-8 w-full rounded-lg">
+            <input type="email" placeholder="Enter your email *" className="bg-transparent w-11/12"/>
+            <RiSendPlaneFill className="cursor-pointer text-3xl" />
           </div>
-          <div className="container">
+          <div className="py-4 px-8">
             <p>
               Discover, collect, and sell extraordinary NFTs OpenSea is the
               world first and largest NFT marketplace
             </p>
           </div>
-        </div>
+          </div>
       </div>
     </div>
   );
