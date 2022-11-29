@@ -6,7 +6,7 @@ import { MdVerified, MdTimer } from "react-icons/md";
 import Link from "next/link";
 
 //INTERNAL IMPORT
-import { LikeProfile } from "../components/componentsindex";
+import { LikeProfile } from "../../components/componentsIndex";
 
 const NFTCardTwo = ({ NFTData }) => {
   const [like, setLike] = useState(false);
@@ -46,7 +46,7 @@ const NFTCardTwo = ({ NFTData }) => {
                 alt="NFT"
                 width={500}
                 height={500}
-                objectFit="cover"
+                objectfit="cover"
                 className='rounded-xl'
               />
             </div>

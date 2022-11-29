@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 
 //INTRNAL IMPORT
-import { Slider, Brand, Loader } from "../components/componentsindex";
+import { Slider, Brand, Loader } from "../components/componentsIndex";
 import SearchBar from "../SearchPage/SearchBar";
-import { Filter } from "../components/componentsindex";
+import { Filter } from "../components/componentsIndex";
 
-import { NFTCard, Banner } from "../collectionPage/collectionIndex";
+import { NFTCard, Banner } from "../collections/collectionIndex";
 
 const searchPage = () => {
   // const { fetchNFTs, setError } = useContext(NFTMarketplaceContext);
@@ -52,11 +52,11 @@ const searchPage = () => {
   //   images.nft_image_2,
   // ];
   return (
-    <div className={Style.searchPage}>
-      <Banner bannerImage={images.creatorbackground2} />
+    <div className=''>
+      <Banner bannerImage="/img/creatorbackground-2.jpeg" />
       <SearchBar
-        onHandleSearch={onHandleSearch}
-        onClearSearch={onClearSearch}
+        // onHandleSearch={onHandleSearch}
+        // onClearSearch={onClearSearch}
       />
       <Filter />
       {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}

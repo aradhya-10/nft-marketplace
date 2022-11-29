@@ -10,13 +10,13 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
     return () => clearTimeout(timer);
   }, [searchItem]);
 
-  useEffect(() => {
-    if (search) {
-      onHandleSearch(search);
-    } else {
-      onClearSearch();
-    }
-  }, [search]);
+  // useEffect(() => {
+  //   if (search) {
+  //     onHandleSearch(search);
+  //   } else {
+  //     onClearSearch();
+  //   }
+  // }, [search]);
 
   return (
     <div className='w-full'>
@@ -29,7 +29,7 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
           value={searchItem}
           className = "w-4/5 border-0 outline-none p-4 bg-slate-800 placeholder-shown:text-blue-300 text-lg"
         />
-        <BsArrowRight className={Style.SearchBar_box_icon} />
+        <BsArrowRight className='' />
       </div>
     </div>
   );
