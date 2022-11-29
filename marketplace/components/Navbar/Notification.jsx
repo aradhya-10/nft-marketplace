@@ -1,5 +1,4 @@
 import React from 'react'
-// import img from "../../public"
 
 const Notification = () => {
   return (
@@ -9,15 +8,15 @@ const Notification = () => {
         <div className='noti_box_img'>
           <img src="/img/user-1.png" alt="User1"
             width={50} height={50}
-            className="noti_box_img"
+            className=" rounded-[5rem]"
           />
         </div>
-        <div className='noti_box_info'>
-          <h4>Brijesh Agal</h4>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <div className='leading-[0] -mt-3'>
+          <h4 className='font-semibold'>Brijesh Agal</h4>
+          <p className='text-[12px] md:text-[15px] leading-[0.3] relative'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           <small>3 minues ago..</small>          
         </div>
-        <span className='noti_box_new'></span>
+        <span className='w-2 h-2 rounded-[50%] bg-blue-300'></span>
       </div>
     </div>
   )
