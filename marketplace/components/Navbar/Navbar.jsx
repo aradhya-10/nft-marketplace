@@ -8,7 +8,6 @@ import { MdNotifications } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
 import { CgMenuLeft, CgMenuRight } from 'react-icons/cg';
 import { Button } from '../componentsIndex'
-import Link from 'next/link';
 
 const Navbar = () => {
   const [notification, setNotification] = useState(false);
@@ -75,21 +74,19 @@ const Navbar = () => {
 
   return (
     <div className='w-full p-6 relative z-[111111]'>
-      <div className='mx-auto w-full flex items-center justify-evenly md:gap-4'>
-
-          <Link href="/">
-            <img
-              src="/img/logo.svg"
-              alt="NFT MARKETPLACE"
-              width={100}
-              height={100}
-              className="text-sm text-blue-300"
-            />
-          </Link>
-        
-        <div className='border border-blue-300 w-fit hidden md:flex items-center py-2 px-4 rounded-[2rem]'>
-          <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-fit' />
-          <BsSearch onClick={() => {}} className="cursor-pointer text-[1.4rem]" />
+      <div className='mx-auto flex items-center justify-between gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
+          <img
+            src="/img/logo.svg"
+            alt="NFT MARKETPLACE"
+            width={100}
+            height={100}
+            className="text-sm text-blue-300"
+          />
+        </div>
+        <div className='border border-blue-300 w-fit flex items-center py-2 px-4 rounded-[2rem]'>
+          <input type="text" placeholder="Search NFT" className='border-0 outline-none bg-transparent w-10/12' />
+          <BsSearch onClick={() => { }} className="cursor-pointer text-[1.4rem]" />
         </div>
         {/*End of Left Section*/}
         <div className="gap-4 md:gap-10 justify-center items-center flex">

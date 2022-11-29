@@ -3,16 +3,17 @@ import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownload } from "react-icons/tb";
 
+
 import Link from "next/link"
 
 const Profile = () => {
   return (
-    <div className='rounded-2xl text-base px-2 py-8 absolute w-[320px] -left-[13.5rem] md:-left-[17rem] top-[4.5rem] z-[2222222]'>
-      <div className='flex items-start p-6 gap-8' >
-        <img src="/img/user-1.png" alt="user profile" width={50} height={50} className='rounded-[50%]' />
-        <div>
-          <p className='font-semibold'>vampireAb</p>
-          <small>0xde0f</small>
+    <div className='prof'>
+      <div className='prof_acc' >
+        <img src="/img/user-1.png" alt="user profile" width={50} height={50} className='' />
+        <div className='prof_acc_info'>
+          <p>vampireAb</p>
+          <small>Addresss..0xde0f</small>
         </div>
       </div>
       <div className=''> 
