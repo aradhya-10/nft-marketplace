@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import images from "../../img"
+import images from "../../public/img"
 import Link from 'next/link';
 import { GrClose } from 'react-icons/gr'
 import {
